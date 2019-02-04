@@ -1,11 +1,10 @@
 //__________________discord_____________________________________________________________________________________________
 var Discord = require("discord.js");
 var {Client, RichEmbed, Attachment} = require('discord.js');
-global.dsbot = new Discord.Client();
+var dsbot = new Discord.Client();
 dsbot.music = require("discord.js-musicbot-addon");
 dsbot.on('ready', function () {
-    console.log('ready')
-})
+});
 // Now we start the music module.
 dsbot.music.start(dsbot, {
     // Set the api key used for YouTube.
@@ -16,5 +15,5 @@ dsbot.music.start(dsbot, {
 
 //______________________________________________________________________________________________________________________
 //___________________token______________________________________________________________________________________________
-dsbot.login("NTMyOTY5NTI5ODU3NDA5MDYz.DyJ6YA.XsgXgGfUchRmThVPqYOdb4mfHmE");
+dsbot.login(process.env.TOKEN);
 //____________________________________________________________________________
